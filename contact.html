@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="css/contact.css">
+   
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="prem.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="menu.html">Услуги</a></li>
+                <li><a href="prem.html">Преимущества</a></li>
+                <!-- Кнопка Личный кабинет -->
+                <button id="loginBtn" class="login-btn">Login</button>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Contacts Section -->
+    <div class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fa fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+37497266426</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>contact@mywebsite.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa fa-map-marker"></i>
+                    <h3>Location</h3>
+                    <p>27 Anastas Mikoyan St,Yerevan</p>
+                </div>
+            </div>
+            
+            <!-- Google Map Embed -->
+            <div class="map-container">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1995.3986517642973!2d44.49370192686995!3d40.21679415265313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd004c69f9d7%3A0xe4d40291cc721758!2s27%20Anastas%20Mikoyan%20St%2CYerevan!5e1!3m2!1sru!2sam!4v1732795076492!5m2!1sru!2sam" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </div>
+    </div>
+
+    <!-- Modal for Login Form -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2 class="modal-header">Login</h2>
+            <form id="loginForm" class="modal-body">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script> <!-- Подключение внешнего JS -->
+</body>
+</html>

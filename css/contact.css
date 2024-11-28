@@ -1,0 +1,358 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 300% 300%;
+    animation: bgAnimation 20s ease infinite;
+    overflow-x: hidden;
+}
+
+/* Body Background Animation */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.4s, color 0.3s;
+}
+
+.nav a:hover {
+    background: #ff6347;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Personal Cabinet Button */
+.login-btn {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff6347;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.info-item {
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.info-item i {
+    font-size: 3rem;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Google Map Embed */
+.map-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.map-container iframe {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    padding-top: 50px;
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content */
+.modal-content {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    padding: 40px;
+    margin: 5% auto;
+    width: 450px;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* Modal Header */
+.modal-header {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Modal Body Inputs */
+.modal-body input {
+    width: 100%;
+    padding: 16px;
+    margin: 12px 0;
+    font-size: 1.2rem;
+    border: 2px solid #ff6347;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.modal-body input:focus {
+    border-color: #ff4500;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Close Button */
+.close-btn {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ff4500;
+}
+
+/* Modal Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .nav a {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        width: 85%;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+    }
+
+    .services {
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .gallery {
+        gap: 20px;
+    }
+
+    #order-form {
+        padding: 10px;
+    }
+
+    #order-form input, #order-form textarea {
+        font-size: 0.9rem;
+    }
+
+    #order-form button {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav ul {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .info-item {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .modal-header {
+        font-size: 2rem;
+    }
+
+    .submit-btn {
+        padding: 12px 25px;
+    }
+}

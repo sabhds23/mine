@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "mine",
+			"path": "."
+		},
+		{
+			"name": "cahby",
+			"path": "../../../Desktop/cahby"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mine"
+	}
+}

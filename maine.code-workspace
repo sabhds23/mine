@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "maine",
+			"path": ".."
+		},
+		{
+			"name": "js",
+			"path": "../../../cakeby/js"
+		},
+		{
+			"name": "css",
+			"path": "../../../cakeby/css"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "maine"
+	}
+}

@@ -1,0 +1,302 @@
+
+/* Общие стили */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+/* Анимация фона */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 99, 71, 0.7), rgba(255, 69, 0, 0.7)); /* Красивый градиент */
+    z-index: -1;
+    animation: backgroundAnimation 5s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, rgba(255, 99, 71, 0.7), rgba(255, 69, 0, 0.7));
+    }
+    100% {
+        background: linear-gradient(135deg, rgba(255, 69, 0, 0.7), rgba(255, 99, 71, 0.7));
+    }
+}
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.4s, color 0.3s;
+}
+
+.nav a:hover {
+    background: #ff6347;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Personal Cabinet Button */
+.login-btn {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Главная секция с изображением */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 700px;  /* Высота секции */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%); /* Затемнение изображения для улучшения читаемости текста */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Текст внутри изображения */
+.hero-text {
+    position: absolute;
+    left: calc(center);
+    color: #fff;
+    text-align: center; /* Выравнивание текста по центру */
+    opacity: 0;
+    animation: fadeInText 2.5s ease-out forwards;
+}
+
+/* Анимация текста */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translate(-60%, -55%) scale(0.8); /* Начальный масштаб и сдвиг */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-60%, -55%) scale(1); /* Конечная позиция */
+    }
+}
+
+
+/* Видео секция */
+.video-section {
+    padding: 60px 20px;
+    background: #f0f0f0;
+    text-align: center;
+    padding-top: 100px; /* Дополнительный отступ сверху */
+}
+
+.video-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInText 3s ease-out;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-item iframe:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Эффект параллакса на фоновое изображение */
+.hero-section {
+    background: url('img/your-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: parallaxEffect 5s infinite alternate;
+}
+
+@keyframes parallaxEffect {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .video-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+/* Стили для секции проектов */
+.projects-section {
+    padding: 80px 20px;
+    background-color: #fafafa; /* Светлый фон */
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Анимация заголовка */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Галерея проектов */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+}
+
+/* Элементы проекта */
+.project-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Изображение проекта */
+.project-item img {
+    width: 100%;
+    height: 350px; /* Увеличена высота изображения */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Описание проекта */
+.project-item p {
+    padding: 20px;
+    font-size: 1.5rem; /* Увеличен размер шрифта для лучшего баланса */
+    font-weight: 600; /* Сделан шрифт более жирным */
+    color: #555;
+    text-align: center;
+    background-color: #fff;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Добавлен плавный переход фона */
+}
+
+/* Эффект при наведении (без подъема карточки) */
+.project-item:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Увеличена тень для выделения */
+    background-color: #f9f9f9; /* Добавлен легкий фон при наведении */
+}
+
+/* Эффект для изображения */
+.project-item:hover img {
+    transform: scale(1.1); /* Легкое увеличение изображения для более заметного эффекта */
+}
+
+/* Эффект для описания */
+.project-item:hover p {
+    color: #f76c6c; /* Цвет текста меняется на более яркий при наведении */
+    background-color: #fff3f3; /* Фон становится слегка розовым при наведении */
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .projects-section h2 {
+        font-size: 2.8rem; /* Увеличен размер заголовка на мобильных устройствах */
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Увеличена минимальная ширина колонок */
+    }
+}
